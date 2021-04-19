@@ -1,0 +1,3 @@
+[submodule "external_tracker/external_module/pytracking"]
+	path = external_tracker/external_module/pytracking
+	url = https://github.com/visionml/pytracking.git

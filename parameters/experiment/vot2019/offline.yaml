@@ -1,0 +1,18 @@
+use_baseline_tracker: True
+dataset: VOT2019
+
+tracker:
+  checkpoint: "../networks/trtr_resnet50.pth"
+  search_size: 280
+
+  postprocess:
+    tracking_size_lpf: 0.8
+    window_factor: 0.4
+
+  model:
+    transformer_mask: True
+    backbone:
+      return_layers: ["layer3"]
+      transformer:
+        enc_layers: 1
+        dec_layers: 1

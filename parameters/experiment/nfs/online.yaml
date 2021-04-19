@@ -1,0 +1,25 @@
+use_baseline_tracker: False
+dataset: NFS
+
+tracker:
+  checkpoint: "../networks/trtr_resnet50.pth"
+  search_size: 380
+
+  postprocess:
+    tracking_size_lpf: 0.8
+    window_factor: 0.2
+
+    boundary_recovery: True
+
+
+  model:
+    transformer_mask: False
+    backbone:
+      return_layers: ['layer3']
+      transformer:
+        enc_layers: 1
+        dec_layers: 1
+
+  dcf:
+    layers: ['layer2']
+    rate: 0.6

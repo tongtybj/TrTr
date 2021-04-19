@@ -1,0 +1,16 @@
+batch_size: 64
+epochs: 20
+benchmark_start_epoch: 8 # test benchmark (default is VOT2018) after one epoch, which is more reliable than evaluation
+
+dataset:
+  paths: [./datasets/yt_bb/dataset/Curation,  ./datasets/vid/dataset/Curation, ./datasets/coco/dataset/Curation, ./datasets/lasot/dataset/Curation, ./datasets/got10k/dataset/Curation] # paths of datasets
+  num_uses: [-1, 50000, -1, 30000, 100000] # the number of images to used from each dataset for training
+  eval_num_uses: [100, 100, 100, 100, 100] # the number of images to used from each dataset for evaluation
+  video_frame_ranges: [3, 100, 1, 100, 100] # the images interval between template image and search image in each dataset
+
+model:
+  backbone:
+    return_layers: ["layer3"]
+  transformer:
+    enc_layers: 1
+    dec_layers: 1
