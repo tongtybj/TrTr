@@ -41,7 +41,7 @@ conda install -y tqdm
 echo ""
 echo ""
 echo "****************** Installing opencv ******************"
-pip install opencv-python
+pip install opencv-python==4.5.2.52
 
 echo ""
 echo ""
