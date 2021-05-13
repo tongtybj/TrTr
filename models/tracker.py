@@ -106,10 +106,10 @@ class Tracker(object):
         self.init_best_score = 0
 
         # for visualize
-        debug_bbox = torch.round(box_cxcywh_to_xyxy(torch.cat([torch.tensor([63.5, 63.5]),  torch.Tensor([bbox[2], bbox[3]]) * scale_z]))).int()
+        debug_bbox = torch.round(box_cxcywh_to_xyxy(torch.cat([torch.tensor([63.5, 63.5]),  torch.Tensor([bbox[2], bbox[3]]) * scale_z]))).int().numpy()
         debug_image = cv2.rectangle(template_image,
-                                         (debug_bbox[0], debug_bbox[1]),
-                                         (debug_bbox[2], debug_bbox[3]),(0,255,0),3)
+                                    (debug_bbox[0], debug_bbox[1]),
+                                    (debug_bbox[2], debug_bbox[3]),(0,255,0),3)
 
         return {'template_image': debug_image}
 
@@ -282,7 +282,7 @@ class Tracker(object):
 
             # debug for search image:
             start_time = time.time()
-            debug_bbox = torch.round(box_cxcywh_to_xyxy(torch.cat([bbox_ct, bbox_wh * scale_z]))).int()
+            debug_bbox = torch.round(box_cxcywh_to_xyxy(torch.cat([bbox_ct, bbox_wh * scale_z]))).int().numpy()
             rec_search_image = cv2.rectangle(search_image,
                                              (debug_bbox[0], debug_bbox[1]),
                                              (debug_bbox[2], debug_bbox[3]),(0,255,0),3)
