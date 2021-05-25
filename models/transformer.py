@@ -330,7 +330,7 @@ def get_args_parser():
                         help="Number of attention heads inside the transformer's attentions")
     parser.add_argument('--dim_feedforward', type=int, default=2048,
                         help="Intermediate size of the feedforward layers in the transformer blocks")
-    parser.add_argument('--dropout', type=float, default=0.0,
+    parser.add_argument('--dropout', type=float, default=0.1,
                         help="Dropout applied in the transformer")
     parser.add_argument('--pre_norm', type=bool, default=False,
                         help="whether do layer normzalize before attention mechansim")
