@@ -14,9 +14,9 @@ tracker:
     transformer_mask: False
     backbone:
       return_layers: ['layer3']
-      transformer:
-        enc_layers: 1
-        dec_layers: 1
+    transformer:
+      enc_layers: 1
+      dec_layers: 1
 
   dcf:
     layers: ['layer2', 'layer3']
