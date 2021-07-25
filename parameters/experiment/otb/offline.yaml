@@ -13,6 +13,6 @@ tracker:
     transformer_mask: True
     backbone:
       return_layers: ["layer3"]
-      transformer:
-        enc_layers: 1
-        dec_layers: 1
+    transformer:
+      enc_layers: 1
+      dec_layers: 1
