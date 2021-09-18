@@ -95,7 +95,7 @@ $ python hp_search.py --tracker.checkpoint ../networks/trtr_resnet50.pth --track
 
 ## Download training datasets
 
-Please read [this README.md](dataset/README.md) to prepare the training dataset.
+Please read this [README.md](datasets/README.md) to prepare the training dataset.
 
 ## Download VOT2018 dataset
 
