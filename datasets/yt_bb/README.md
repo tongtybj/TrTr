@@ -2,13 +2,17 @@
 
 Link: https://research.google.com/youtube-bb/download.html
 
-### Create symbolic link
+## Create symbolic link
 ```shell
 ln -sbf $PWD/youtube_bb ./dataset
 ```
 **note**: `$PWD/youtube_bb` is a directory to store dataset. Suppose you have sufficient space under `$PWD/youtube_bb`
 
-### Download video and extract annotated frames (~400GB)
+## Get curated dataset
+
+### Method1: curate from original videos
+
+#### Step1: Download video and extract annotated frames (~400GB)
 ```shell
 python download.py --dl_dir=./youtube_bb --num_threads=16
 ```
@@ -47,10 +51,17 @@ python download.py --dl_dir=./youtube_bb --num_threads=16 --vid_start=54900 --co
 **note**: if you halt the process, `youtube.com_cookies.txt` might loss the content.
 
 
-### Crop & Generate data info (~ 1day?)
+#### Step2: Crop & Generate data info (~ 1day?)
 ```shell
 python curate_video.py
 ```
 **note1**: you need to also curate validation data by: `python curate.py --num_threads=2`
 
 **note2**: if you resume from the middle, please try: `python curate.py --num_threads=2 --vid_start=50600`
+
+
+### Method2: download curated dataset from Google Drive
+Because the original videos in youtube are very difficult to download, we provide the curated dataset with following URL:
+https://drive.google.com/file/d/1Vuvho89c1yEZbJzmgtc3qnfVIctg4zNt/view?usp=sharing
+
+Please download this under `./dataset`(`${HOME}/trtr/datasets/yt_bb/dataset`) and extract it. Then you can get a directory called `Curation`
