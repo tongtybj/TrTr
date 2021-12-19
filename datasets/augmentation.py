@@ -171,7 +171,7 @@ class Augmentation:
         width = image.shape[1]
         bbox = Corner(width - 1 - bbox.x2, bbox.y1,
                       width - 1 - bbox.x1, bbox.y2)
-        bbox = Corner(width - 1 - mask[2], mask[1],
+        mask = Corner(width - 1 - mask[2], mask[1],
                       width - 1 - mask[0], mask[3])
 
         return image, bbox, mask
